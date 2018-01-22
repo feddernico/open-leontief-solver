@@ -20,31 +20,68 @@ shinyUI(fluidPage(theme = "css/main.css",
                 
                 dashboardBody(
                         tabItems(
-                                tabItem(tabName = "main",
+                                tabItem(tabName = "readme",
+                                        fluidRow(
+                                                column(12, h2("Readme"),
+                                                       HTML("<hr />"))
+                                        ),
+                                        fluidRow(
+                                                box(
+                                                        id = "readme",
+                                                        title = "",
+                                                        width = 12,
+                                                        withMathJax(includeMarkdown("readme.Rmd"))
+                                                )
+                                        )       
+                                ),
+                                tabItem(tabName = "input",
+                                        fluidRow(
+                                                column(12, h2("Input Data"),
+                                                       HTML("<hr />"))
+                                        ),
                                         fluidRow(
                                                 box(
                                                         id = "consumption_matrix",
                                                         title = "Consumption Matrix",
                                                         status = "primary",
                                                         collapsible = TRUE,
-                                                        solidHeader = TRUE,
                                                         width = 12,
-                                                        dataTableOutput("consumptionMatrix")
+                                                        DT::dataTableOutput("consumptionMatrix")
+                                                )
+                                        ),
+                                        fluidRow(
+                                                box(
+                                                        id = "demand_vector",
+                                                        title = "Demand Vector",
+                                                        status = "warning",
+                                                        collapsible = TRUE,
+                                                        width = 12,
+                                                        DT::dataTableOutput("demandVector")
                                                 )
                                         )
                                 ),
-                                tabItem(tabName = "readme",
+                                tabItem(tabName = "solver",
+                                        fluidRow(
+                                                column(12, h2("Solver"),
+                                                       HTML("<hr />"))
+                                        ),
                                         fluidRow(
                                                 box(
-                                                        id = "readme",
-                                                        title = "Readme",
+                                                        id = "solver",
+                                                        title = "Solver",
                                                         status = "primary",
                                                         collapsible = TRUE,
-                                                        solidHeader = TRUE,
-                                                        width = 12,
-                                                        includeMarkdown("readme.Rmd")
+                                                        width = 6,
+                                                        DT::dataTableOutput("productionVector")
+                                                ),
+                                                box(
+                                                        id = "production_plot",
+                                                        title = "Prodution",
+                                                        collapsible = TRUE,
+                                                        width = 6,
+                                                        plotOutput("productionPlot")
                                                 )
-                                        )       
+                                        )
                                 )
                         )
                 )

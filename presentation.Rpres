@@ -71,6 +71,8 @@ barplot(p, main = "Production", beside = TRUE, xlab = "Industries", names.arg = 
 Sources
 ========================================================
 
+The repository for all the Shiny code developed is hosted here: https://github.com/feddernico/open-leontief-solver/
+
  - https://www.youtube.com/watch?v=1p3Xlo5hqys
  - https://youtube.com/watch?v=UxVbDJ3ERas
  - http://www.math.ksu.edu/~gerald/leontief.pdf

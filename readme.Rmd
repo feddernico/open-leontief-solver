@@ -10,12 +10,24 @@ output:
                 highlight: tango
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## Readme
-
 This Shiny app provides an example on how to solve a Open Leontief model, using random generated data.
 
 ## How it works
+
+The user can select the complexity of the problem by selecting the number of interrelated sectors in the model, using a slider available in the sidebar. Then a consumption matrix and a demand vector is generated and shown in the **Input Data** section.
+
+Internal consumption is $C \times P$. So if P is our production vector, $P - C \times P = D$, the consumption of external industries.
+
+We of course want to find the level of production that meets internal and external demand.
+
+$$P - C \times P = P (I - C) = D$$
+
+If $C$ is productive (sum of each row/col is less than 1), $(I - C)$ is guaranteed to be invertible. (Beyond the scope of this script to prove this, though).
+
+So the Production vector is calculated as `solve(I - C) %*% D`, which is the solution to the Leontief Problem.
+
+In the **Solver** section, the production vector $P$ that solves the Leontief problem is calculated and shown in a tabular format.
+
+Using this we can answer some useful questions like:
+
+ - Given current external demand, what should every industry be producing?

@@ -81,8 +81,8 @@ h1, h2, h3, h4, h5, h6, li.header {
         padding: 5px 0 !important;
 }
 
-div#campaign_initiative {
-visibility: hidden !important;
+.sidebar-menu button {
+        margin-left: 15px;
 }
 
 /* --------------------------------------------------------------------------
