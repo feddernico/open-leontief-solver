@@ -69,7 +69,12 @@ p <- solve(diag(5) - C)%*%D; p
 Conclusion
 ========================================================
 
-Using this we can answer some useful questions like: Given current external demand, what should every industry be producing?
+Using this we can answer some useful questions like: 
+
+ - Given current external demand, what should every industry be producing?
+
+Conclusion - plot
+========================================================
 
 ```{r}
 barplot(p, main = "Production", beside = TRUE, xlab = "Industries", names.arg = c("1", "2", "3", "4", "5"), las = 1)
