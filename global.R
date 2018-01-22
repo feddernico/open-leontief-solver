@@ -1,3 +1,4 @@
+# a list of industries and institutions
 industries.institutions <- cbind(c("Industry", "Industry", "Industry", "Industry", 
                                    "Industry", "Industry", "Industry", "Industry", 
                                    "Industry", "Industry", "Industry", "Industry", 
@@ -15,3 +16,5 @@ industries.institutions <- cbind(c("Industry", "Industry", "Industry", "Industry
                                    "Ind Bus Tax", "Households", 
                                    "Gov and other Final Pmts", "Frgn Trade", 
                                    "Dom Trade"))
+
+

@@ -9,6 +9,12 @@ shinyServer(function(input, output) {
         
         # observe changes in the input values
         observe({
+                rv$m <- generateOpen(input$n_industries)
+                
+                rownames(rv$m) <- industries.institutions[1:nrow(rv$m), 2]
+                colnames(rv$m) <- industries.institutions[1:nrow(rv$m), 2]
+                
+                rv$dfm <- as.data.frame(rv$m)
                 
         })
         
@@ -22,15 +28,12 @@ shinyServer(function(input, output) {
                 lm(Volume ~ Girth, data = brushed_data)
         })
         
+        # Generates a random consumption matrix for the Leontief problem
         output$consumptionMatrix <- renderDataTable({
-                
-                
-                m <- generateOpen(input$n_industries)
-                
-                rownames(m) <- industries.institutions[1:nrow(m), 2]
-                colnames(m) <- industries.institutions[1:nrow(m), 2]
-                
-                as.data.frame(m)
+                rv$dfm
+        })
+        
+        output$demandVector <- renderDataTable({
                 
         })
 })

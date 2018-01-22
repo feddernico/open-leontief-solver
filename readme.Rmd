@@ -16,4 +16,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Readme
 
-This Shiny app provides an example on how to solve a Open Leontief 
+This Shiny app provides an example on how to solve a Open Leontief model, using random generated data.
+
+## How it works

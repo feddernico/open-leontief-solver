@@ -33,11 +33,11 @@ shinyUI(fluidPage(theme = "css/main.css",
                                                 )
                                         )
                                 ),
-                                tabItem(tabName = "tutorial",
+                                tabItem(tabName = "readme",
                                         fluidRow(
                                                 box(
-                                                        id = "tutorial",
-                                                        title = "Tutorial",
+                                                        id = "readme",
+                                                        title = "Readme",
                                                         status = "primary",
                                                         collapsible = TRUE,
                                                         solidHeader = TRUE,
