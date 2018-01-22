@@ -1,0 +1,19 @@
+---
+title: 'Readme: Open Leontief Solver'
+author: "Federico Viscioletti"
+date: "1/17/2018"
+output: 
+        html_document:
+                toc: yes
+                toc_float: yes
+                theme: cosmo
+                highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Readme
+
+This Shiny app provides an example on how to solve a Open Leontief 

@@ -1,0 +1,185 @@
+body {
+        font-family: 'Roboto', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, li.header {
+        font-family: 'Factoria Light' !important;
+}
+
+.content-wrapper {
+        margin-top: 50px;
+}
+
+.container-fluid {
+        padding: 0;
+}
+
+.navbar-nav i {
+        color: #000000 !important;
+}
+
+/* --------------------------------------------------------------------------
+        NAVBAR STYLE
+-------------------------------------------------------------------------- */
+.logo {
+        background-color: #DEDEDE !important;
+        color: #000000 !important;
+        font-size: 18px !important;
+        word-break: break-word !important;
+        /*
+        line-height: 23px !important;
+        padding-top: 3px !important;
+        */
+}
+
+.main-header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+}
+
+.navbar {
+        background: #EEEEEE url('../img/logo-140.png') no-repeat 55px 4px !important; 
+}
+
+
+
+/* --------------------------------------------------------------------------
+        SIDEBAR STYLE
+-------------------------------------------------------------------------- */
+.main-sidebar {
+        background: #666666;
+}
+
+.sidebar-toggle { 
+        color: #000000 !important;
+}
+
+.sidebar-toggle:hover { 
+        background-color: #DEDEDE !important;
+}
+
+
+.sidebar-menu > li.active > a {
+        border-left-color: #E72B78 !important;
+}
+
+.sidebar-menu > li:hover > a { 
+        border-left-color: #00A5DE !important;
+}
+
+.content-wrapper { 
+        overflow: auto; 
+        background: #FFF url('../img/bg.png') repeat-x center top !important;
+}
+
+.treeview-menu {
+        padding-bottom: 1px !important;
+}
+
+.treeview-menu li {
+        padding: 5px 0 !important;
+}
+
+div#campaign_initiative {
+visibility: hidden !important;
+}
+
+/* --------------------------------------------------------------------------
+        SECTIONS DIV STYLE
+-------------------------------------------------------------------------- */
+.bg-fuchsia, .campaign_effect { 
+        background: #E72B78 !important;
+}
+
+.bg-blue, #numContacts .bg-blue, #totSelSize .bg-blue, #selectionSize .bg-blue, .appeal {
+        background: #00A5DE !important;
+}
+
+.campaign_effect, .incremental_metrics {
+        padding: 20px 0 10px 50%;
+}
+
+.incremental_metrics {
+        background: #00A65A !important;
+}
+
+.reach_and_spend {
+        background: #F39000;
+}
+
+.appeal {
+        background: #00A5DE;
+}
+
+.reach_and_spend, .appeal {
+        padding: 20px 0 10px 10px;   
+}   
+
+.campaign_effect, .incremental_metrics, .reach_and_spend, .appeal {
+        display: -webkit-box;
+        margin-bottom: 15px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+}   
+
+.campaign_effect h2, .incremental_metrics h2, .reach_and_spend h2, .appeal h2 {
+        margin: 0;
+        color: #FFF;
+}
+
+.campaign_effect h2, .incremental_metrics h2 {
+        margin-left: -170px;
+}
+
+.start_end_date {
+        margin-left: 9px;
+        vertical-align: sub;
+}
+
+.campaign_effect .shiny-download-link, .incremental_metrics .shiny-download-link, 
+.reach_and_spend .shiny-download-link, .appeal .shiny-download-link {
+        margin-left: 20px;
+}
+
+/* --------------------------------------------------------------------------
+        BOX STYLE
+-------------------------------------------------------------------------- */
+.box-solid.box-primary { 
+        text-align: center;
+        border: 1px solid #00A5DE !important;
+}
+
+.box-solid.box-primary .box-header {
+        background: #00A5DE !important;
+}
+
+
+
+/* --------------------------------------------------------------------------
+        TAB BOX STYLE
+-------------------------------------------------------------------------- */
+.nav-tabs-custom {
+        border-top: 3px solid #DEDEDE;
+        padding-top: 8px;
+}
+
+/* --------------------------------------------------------------------------
+        VALUE BOX STYLE
+-------------------------------------------------------------------------- */
+.small-box h3 {
+        font-size: 18px !important;
+}
+
+.small-box .fa {
+        font-size: 55px !important;
+}
+
+        
+/* --------------------------------------------------------------------------
+DATA TABLE STYLE
+-------------------------------------------------------------------------- */
+#consumption_matrix {
+        overflow-x: scroll;
+}

@@ -1,0 +1,1 @@
+dashboardHeader(title = span("Open Leontief Solver"))
