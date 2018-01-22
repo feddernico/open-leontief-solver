@@ -4,6 +4,12 @@ author: Federico Viscioletti
 date: 1/17/2018
 autosize: true
 
+<style>
+.small-code pre code {
+  font-size: 1em;
+}
+</style>
+
 
 The Shiny app developed is a solver for the Open Leontief model
 
@@ -14,6 +20,7 @@ The Shiny app developed is a solver for the Open Leontief model
 
 Consumption matrix
 ========================================================
+class: small-code
 
 The core of the Shiny app is represented by a function which randomly generates a consumption matrix. The matrix represents the flows among each sector of the economy described
 
@@ -33,17 +40,18 @@ C <- generateOpen(5); C
 ```
 
 ```
-           [,1]        [,2]       [,3]       [,4]       [,5]
-[1,] 0.05196315 0.001709079 0.13115225 0.14470496 0.14678618
-[2,] 0.18773509 0.129728629 0.05104274 0.17018239 0.07635296
-[3,] 0.05661618 0.072484933 0.02676390 0.01471367 0.02002455
-[4,] 0.18242872 0.108715813 0.01329368 0.01267179 0.12398623
-[5,] 0.19840444 0.193807618 0.04263355 0.19687806 0.06412431
+           [,1]       [,2]       [,3]       [,4]       [,5]
+[1,] 0.06180232 0.02064721 0.10797674 0.05640529 0.02872462
+[2,] 0.16906275 0.09554726 0.07749790 0.08411975 0.12829147
+[3,] 0.13418629 0.09475015 0.04694639 0.11260326 0.08882951
+[4,] 0.18415156 0.02169703 0.05387261 0.04658061 0.01875123
+[5,] 0.13737788 0.08113988 0.13171286 0.06383354 0.18414119
 ```
 
 
 Demand Vector
 ========================================================
+class: small-code
 
 To generate a demand vector, which is a random vector of external demand volumes, we will use the same random function, and select just the first column and multiplying it by 100, this will be our demand vector  
 
@@ -54,11 +62,12 @@ D <- 100 * generateOpen(5)[, 1]; D
 ```
 
 ```
-[1] 10.5644990  8.5272264 11.3181492  0.5906018  0.3526755
+[1]  9.393502 16.681422 19.726510  3.450167 11.991165
 ```
 
 Solving the model
 ========================================================
+class: small-code
 
 Internal consumption is $C \times P$. So if P is our production vector and $D$ our demand, $P - C \times P = D$, the consumption of external industries.
 
@@ -75,15 +84,16 @@ p <- solve(diag(5) - C)%*%D; p
 
 ```
           [,1]
-[1,] 15.503286
-[2,] 16.034257
-[3,] 14.009622
-[4,]  6.547039
-[5,]  8.999492
+[1,] 15.336510
+[2,] 28.302926
+[3,] 29.159055
+[4,]  9.374888
+[5,] 25.535807
 ```
 
 Conclusion
 ========================================================
+class: small-code
 
 Using this we can answer some useful questions like: 
 

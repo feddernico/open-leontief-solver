@@ -4,6 +4,12 @@ author: Federico Viscioletti
 date: 1/17/2018
 autosize: true
 
+<style>
+.small-code pre code {
+  font-size: 1em;
+}
+</style>
+
 
 The Shiny app developed is a solver for the Open Leontief model
 
@@ -14,6 +20,7 @@ The Shiny app developed is a solver for the Open Leontief model
 
 Consumption matrix
 ========================================================
+class: small-code
 
 The core of the Shiny app is represented by a function which randomly generates a consumption matrix. The matrix represents the flows among each sector of the economy described
 
@@ -34,6 +41,7 @@ C <- generateOpen(5); C
 
 Demand Vector
 ========================================================
+class: small-code
 
 To generate a demand vector, which is a random vector of external demand volumes, we will use the same random function, and select just the first column and multiplying it by 100, this will be our demand vector  
 
@@ -44,6 +52,7 @@ D <- 100 * generateOpen(5)[, 1]; D
 
 Solving the model
 ========================================================
+class: small-code
 
 Internal consumption is $C \times P$. So if P is our production vector and $D$ our demand, $P - C \times P = D$, the consumption of external industries.
 
@@ -59,6 +68,7 @@ p <- solve(diag(5) - C)%*%D; p
 
 Conclusion
 ========================================================
+class: small-code
 
 Using this we can answer some useful questions like: 
 
