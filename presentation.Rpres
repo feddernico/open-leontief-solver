@@ -4,14 +4,13 @@ author: Federico Viscioletti
 date: 1/17/2018
 autosize: true
 
-Introduction
-========================================================
 
 The Shiny app developed is a solver for the Open Leontief model
 
 - The Open Leontief model is part of a branch of operational research called Input-Output analysis
 - It is a way to describe and model an economy where there is external demand outside of the interrelated industries
 - Is opposed to the Closed Leontief model which viceversa describes an economy without any external demand.
+
 
 Consumption matrix
 ========================================================
@@ -27,12 +26,7 @@ generateOpen <- function(t) {
         }
         return(m)
 }
-```
 
-Consumption matrix - example
-========================================================
-
-```{r}
 # generates a 5 x 5 consumption matrix
 C <- generateOpen(5); C
 ```
@@ -59,9 +53,6 @@ $$P - C \times P = P (I - C) = D$$
 
 If $C$ is productive (sum of each row/col is less than 1), $(I - C)$ is guaranteed to be invertible.
 
-Solving the model - view
-========================================================
-
 ```{r}
 p <- solve(diag(5) - C)%*%D; p
 ```
@@ -72,9 +63,6 @@ Conclusion
 Using this we can answer some useful questions like: 
 
  - Given current external demand, what should every industry be producing?
-
-Conclusion - plot
-========================================================
 
 ```{r}
 barplot(p, main = "Production", beside = TRUE, xlab = "Industries", names.arg = c("1", "2", "3", "4", "5"), las = 1)

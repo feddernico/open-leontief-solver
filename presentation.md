@@ -4,14 +4,13 @@ author: Federico Viscioletti
 date: 1/17/2018
 autosize: true
 
-Introduction
-========================================================
 
 The Shiny app developed is a solver for the Open Leontief model
 
 - The Open Leontief model is part of a branch of operational research called Input-Output analysis
 - It is a way to describe and model an economy where there is external demand outside of the interrelated industries
 - Is opposed to the Closed Leontief model which viceversa describes an economy without any external demand.
+
 
 Consumption matrix
 ========================================================
@@ -28,24 +27,18 @@ generateOpen <- function(t) {
         }
         return(m)
 }
-```
 
-Consumption matrix - example
-========================================================
-
-
-```r
 # generates a 5 x 5 consumption matrix
 C <- generateOpen(5); C
 ```
 
 ```
-           [,1]       [,2]       [,3]       [,4]        [,5]
-[1,] 0.05265670 0.01318616 0.09793100 0.18235973 0.049248702
-[2,] 0.02087187 0.04479925 0.14253633 0.07882243 0.142918222
-[3,] 0.14058573 0.04801368 0.01128215 0.13547265 0.006228984
-[4,] 0.06731539 0.11241884 0.14561655 0.05778927 0.038034080
-[5,] 0.10394454 0.11441348 0.02702524 0.16840664 0.018181561
+            [,1]       [,2]       [,3]        [,4]       [,5]
+[1,] 0.111626473 0.19659323 0.17515098 0.149321368 0.16236612
+[2,] 0.180552691 0.13844739 0.01315655 0.043296987 0.13709462
+[3,] 0.007417716 0.09819259 0.10954386 0.056173119 0.03588688
+[4,] 0.006158115 0.09750236 0.05724366 0.000161776 0.13556443
+[5,] 0.119012932 0.05006637 0.17061717 0.016698104 0.17064129
 ```
 
 
@@ -61,7 +54,7 @@ D <- 100 * generateOpen(5)[, 1]; D
 ```
 
 ```
-[1] 12.697136 19.186696 15.071158 17.127307  7.564739
+[1] 13.400183  8.630779  6.399920 15.189368 18.674417
 ```
 
 Solving the model
@@ -75,9 +68,6 @@ $$P - C \times P = P (I - C) = D$$
 
 If $C$ is productive (sum of each row/col is less than 1), $(I - C)$ is guaranteed to be invertible.
 
-Solving the model - view
-========================================================
-
 
 ```r
 p <- solve(diag(5) - C)%*%D; p
@@ -85,11 +75,11 @@ p <- solve(diag(5) - C)%*%D; p
 
 ```
          [,1]
-[1,] 22.58927
-[2,] 29.24822
-[3,] 23.79304
-[4,] 27.72206
-[5,] 18.91465
+[1,] 32.30285
+[2,] 23.15219
+[3,] 12.71349
+[4,] 22.66388
+[5,] 31.62155
 ```
 
 Conclusion
@@ -99,15 +89,12 @@ Using this we can answer some useful questions like:
 
  - Given current external demand, what should every industry be producing?
 
-Conclusion - plot
-========================================================
-
 
 ```r
 barplot(p, main = "Production", beside = TRUE, xlab = "Industries", names.arg = c("1", "2", "3", "4", "5"), las = 1)
 ```
 
-![plot of chunk unnamed-chunk-5](presentation-figure/unnamed-chunk-5-1.png)
+![plot of chunk unnamed-chunk-4](presentation-figure/unnamed-chunk-4-1.png)
 
 Sources
 ========================================================
